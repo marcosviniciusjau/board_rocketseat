@@ -5,7 +5,7 @@ interface IssueCommentListProps {
   issueId: string;
 }
 
-export async function IssueCommentList({ issueId }: IssueCommentListProps) {
+export async function IssueCommentsList({ issueId }: IssueCommentListProps) {
   const { comments } = await listIssueComments({ issueId });
 
   if(comments.length === 0){
