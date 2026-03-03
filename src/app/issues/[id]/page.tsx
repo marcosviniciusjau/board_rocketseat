@@ -3,7 +3,7 @@ import { getIssue } from "@/http/get-issue"
 import { MoveLeftIcon, ArchiveIcon, ThumbsUpIcon } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { IssueCommentList } from "../issue-comments/issue-comment-list"
+import { IssueCommentList } from "./issue-comments/issue-comment-list"
 
 const statusLabels = {
   backlog: "Backlog",
