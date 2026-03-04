@@ -4,27 +4,32 @@ import { Inter } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ReactQueryProvider } from "@/libs/react-query";
 
-export const metadata: Metadata = {  
+export const metadata: Metadata = {
   title: {
     template: "%s | Product Roadmap",
-    default: "Product Roadmap",
+    default: "Product Roadmap"
   },
-  description: "Follow the development progress of our entire platform.",
+  description: "Follow the development progress of our entire platform."
 };
 const interFont = Inter({
   subsets: ["latin"]
 });
 
 export default function RootLayout({
-  children
+  children,
+  modal
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={interFont.className}>
       <body className="bg-navy-950 text-navy-50 antialised">
         <ReactQueryProvider>
-        <NuqsAdapter>{children}</NuqsAdapter>
+          <NuqsAdapter>
+            {modal}
+            {children}
+          </NuqsAdapter>
         </ReactQueryProvider>
       </body>
     </html>

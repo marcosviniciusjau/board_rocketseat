@@ -4,9 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
 
+  cacheComponents: true,
   logging: {
     fetches: {
-      fullUrl: true
+      fullUrl: true,
     }
   }
 };

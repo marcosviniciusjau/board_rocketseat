@@ -29,6 +29,8 @@ export function IssueCommentForm({ isAuthenticated, onCreateComment }: IssueComm
 
   async function handleCreateComment(data: CreateCommentSchema) {
     await onCreateComment(data.text);
+    
+    reset();
   }
 
 

@@ -1,8 +1,8 @@
-import { SearchInput } from "./search-input"
-import { UserButton } from "@/components/header/user-button"
+import { Suspense } from "react";
+import { SearchInput } from "./search-input";
+import { UserButton } from "@/components/header/user-button";
 
 export function Header() {
- 
   return (
     <header className="max-w-[900px] mx-auto w-full flex items-center justify-between">
       <div className="space-y-1">
@@ -13,10 +13,11 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-4">
-        <SearchInput />
-        </div>
-       <UserButton />
-      
+        <Suspense>
+          <SearchInput />
+        </Suspense>
+      </div>
+      <UserButton />
     </header>
-  )
+  );
 }

@@ -2,16 +2,24 @@
 
 import { authClient } from "@/libs/auth-client";
 import { LoaderIcon, LogInIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export function UserButton() {
   const { data: session, isPending } = authClient.useSession();
-
+  const router = useRouter();
   async function handleSignIn() {
     await authClient.signIn.social({ provider: "github", callbackURL: "/" });
   }
 
   async function handleSignOut() {
-    await authClient.signOut();
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: ()=> {
+          router.push('/');
+        }
+      }
+    });
+    
   }
 
   return (

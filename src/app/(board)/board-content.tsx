@@ -75,13 +75,11 @@ export function BoardContent({ issues }: BoardContentProps) {
                     <Card.Title>{issue.title}</Card.Title>
                   </Card.Header>
                   <Card.Footer>
-                    <Button className="text-navy-100 flex items-center gap-2 rounded-lg px-2.5 py-1 bg-navy-600 cursor-pointer">
-                      <LikeButton
-                        issueId={issue.id}
-                        initialLikes={interaction?.likesCount ?? 0}
-                        initialLiked={interaction?.isLiked ?? false}
-                      />
-                    </Button>
+                    <LikeButton
+                      issueId={issue.id}
+                      initialLikes={interaction?.likesCount ?? 0}
+                      initialLiked={interaction?.isLiked ?? false}
+                    />
 
                     <Button>
                       <MessageCircleIcon className="size-3" />
